@@ -1,0 +1,42 @@
+# We'll use defaults from the LLVM style, but with 4 columns indentation.
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 80
+ReflowComments: false
+PointerAlignment: Left
+BinPackParameters: false
+BinPackArguments: false
+BreakConstructorInitializers: BeforeComma
+BreakTemplateDeclarations: true
+ConstructorInitializerIndentWidth: 2
+PackConstructorInitializers: CurrentLine
+MaxEmptyLinesToKeep: 3
+AlignOperands: AlignAfterOperator
+AllowAllArgumentsOnNextLine: false
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+AllowShortLoopsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
+BreakBeforeTernaryOperators: true
+BreakBeforeBinaryOperators: All
+# Penalties
+PenaltyReturnTypeOnItsOwnLine: 150
+
+# Case statements
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+  AlignCaseColons: false
+AllowShortCaseExpressionOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AttributeMacros: [MP_EXPORT]

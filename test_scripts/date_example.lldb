@@ -1,0 +1,6 @@
+target create build/date_example
+
+break set --file src/date_example.cpp --line 9
+run
+frame variable dates
+exit
