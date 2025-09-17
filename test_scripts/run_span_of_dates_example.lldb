@@ -1,0 +1,6 @@
+target create build/span_of_dates_example
+
+break set --file src/span_of_dates_example.cpp --line 9
+run
+frame variable dates
+exit

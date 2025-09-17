@@ -1,0 +1,6 @@
+target create build/span_example
+
+break set --file src/span_example.cpp --line 7
+run
+frame variable values
+exit
