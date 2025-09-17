@@ -7,23 +7,22 @@ from datetime import date
 # This value is datetime.date(1970, 1, 1).toordinal()
 DAYS_TO_EPOCH = date(1970, 1, 1).toordinal()
 
-
 def print_date(valobj, internal_dict, options) -> str:
-    m_days = valobj.GetChildMemberWithName("days_").unsigned
+    m_days = valobj.GetChildMemberWithName("days_").GetValueAsSigned()
     py_date = date.fromordinal(DAYS_TO_EPOCH + m_days)
-    return f"date: {py_date} (m_days={m_days})"
+    return f"date: {py_date}"
 
 
 class SpanProvider:
     def __init__(self, valobj, internal_dict):
         self.valobj = valobj
 
-    #   this call should initialize the Python object using valobj as the
-    #   variable to provide synthetic children for
+    # Give python the _number_ of children in the container
     def num_children(self, max_children) -> int:
         # Get the count_ member from the span
         return self.valobj.GetChildMemberWithName("count_").unsigned
 
+    # Get a child within the container
     def get_child_at_index(self, index):
         return self.valobj.GetValueForExpressionPath(f".data_[{index}]")
 
